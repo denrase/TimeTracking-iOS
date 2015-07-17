@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o8I-xZ-0t2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Glance Interface Controller-->
+        <scene sceneID="EfE-au-xwF">
+            <objects>
+                <glanceController topTemplateType="body1Group" id="Xqe-vg-NsC" customClass="GlanceController" customModule="TimeTracking_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Overtime" id="Ww5-Nd-hTd">
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </label>
+                        <group alignment="left" spacing="0.0" id="m7k-eu-Gut">
+                            <items>
+                                <label alignment="left" text="Today" id="kS6-dm-5xF">
+                                    <color key="textColor" red="0.070588235289999995" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="light" pointSize="16"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group alignment="left" layout="vertical" id="Mah-T9-1vC">
+                            <items>
+                                <group width="1" alignment="left" layout="vertical" id="rYI-ox-asa">
+                                    <items>
+                                        <label alignment="center" text="--" textAlignment="center" id="eKS-a0-WdJ">
+                                            <fontDescription key="font" type="system" weight="light" pointSize="34"/>
+                                        </label>
+                                        <timer alignment="center" hidden="YES" textAlignment="center" previewedSeconds="3660" id="n5o-nt-9Kh">
+                                            <fontDescription key="font" type="system" weight="light" pointSize="34"/>
+                                            <calendarUnit key="units" hour="YES" minute="YES"/>
+                                        </timer>
+                                    </items>
+                                </group>
+                                <label width="42" height="12" alignment="center" text="WORKED" textAlignment="left" id="lOl-m6-g3T">
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="10"/>
+                                </label>
+                                <label alignment="center" text="--" id="ulk-Yz-KcA">
+                                    <fontDescription key="font" type="system" weight="light" pointSize="18"/>
+                                </label>
+                                <label alignment="center" text="PAUSED" id="egf-ef-izy">
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="10"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="pausedLabel" destination="ulk-Yz-KcA" id="ZI8-7I-IV9"/>
+                        <outlet property="workedEmptyLabel" destination="eKS-a0-WdJ" id="90j-Zd-Xgp"/>
+                        <outlet property="workedInterfaceTimer" destination="n5o-nt-9Kh" id="8fh-Id-TDx"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="184" y="196"/>
+        </scene>
+        <!--Today-->
+        <scene sceneID="2JL-IW-FXb">
+            <objects>
+                <controller title="Today" hidesWhenLoading="NO" id="o8I-xZ-0t2" customClass="TodayController" customModule="TimeTracking_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="Xaj-VU-1W0">
+                            <items>
+                                <label alignment="center" text="--" textAlignment="center" id="gMi-Py-OcM">
+                                    <fontDescription key="font" type="system" weight="light" pointSize="34"/>
+                                </label>
+                                <timer alignment="center" hidden="YES" textAlignment="center" previewedSeconds="0" id="nkR-ww-9Q3">
+                                    <fontDescription key="font" type="system" weight="light" pointSize="34"/>
+                                    <calendarUnit key="units" hour="YES" minute="YES"/>
+                                </timer>
+                            </items>
+                        </group>
+                        <label alignment="center" text="WORKED" textAlignment="center" id="oha-pg-oBa">
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="font" type="boldSystem" pointSize="10"/>
+                        </label>
+                        <label alignment="center" text="--" id="bjd-NN-KeV">
+                            <fontDescription key="font" type="system" weight="light" pointSize="18"/>
+                        </label>
+                        <label alignment="center" text="PAUSED" textAlignment="center" id="S76-AD-vhf">
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="font" type="boldSystem" pointSize="10"/>
+                        </label>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="VqI-9H-4DL">
+                            <items>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="START" enabled="NO" id="GKp-rN-HOw">
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <action selector="pressedStartStop" destination="o8I-xZ-0t2" id="2U0-el-DpT"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="4"/>
+                        </group>
+                    </items>
+                    <menu key="menu" id="sCt-1q-pzD">
+                        <items>
+                            <menuItem title="Refresh" icon="repeat" id="6KF-Sb-9em">
+                                <connections>
+                                    <action selector="refresh" destination="o8I-xZ-0t2" id="d2g-a0-m3J"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="disabledTimerLabel" destination="gMi-Py-OcM" id="98k-Pv-Ikd"/>
+                        <outlet property="pausedTimeLabel" destination="bjd-NN-KeV" id="Rvb-cS-7X8"/>
+                        <outlet property="startStopButton" destination="GKp-rN-HOw" id="Zce-zX-lin"/>
+                        <outlet property="workedInterfaceTimer" destination="nkR-ww-9Q3" id="Djc-eY-UaY"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="186" y="443"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.070588235289999995" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+</document>
