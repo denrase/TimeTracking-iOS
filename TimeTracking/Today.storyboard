@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gzh-Vg-RSm">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Today-->
+        <scene sceneID="OY1-He-Idn">
+            <objects>
+                <viewController id="4tn-aL-MnG" customClass="TodayViewController" customModule="TimeTracking" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O2F-KA-4Pz"/>
+                        <viewControllerLayoutGuide type="bottom" id="ekS-cX-GWp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QRh-P1-hUe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmR-Nt-3sZ">
+                                <rect key="frame" x="166" y="536" width="268" height="44"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="268" id="5ES-qS-Z1O"/>
+                                    <constraint firstAttribute="height" constant="44" id="XWX-v8-pNZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressedStartStop:" destination="4tn-aL-MnG" eventType="touchUpInside" id="bvb-wI-Mgx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07:42" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="OfM-Yc-UP5">
+                                <rect key="frame" x="205" y="84" width="191" height="87"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="76"/>
+                                <color key="textColor" red="0.41960784309999999" green="0.47058823529999999" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:35" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="5aW-Q1-Qjm">
+                                <rect key="frame" x="255" y="214" width="91" height="43"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="36"/>
+                                <color key="textColor" red="0.41960784309999999" green="0.47058823529999999" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="PAUSED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHw-iX-Jz0">
+                                <rect key="frame" x="276" y="265" width="49" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.74117647060000003" green="0.76470588240000004" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="WORKED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOB-4y-geK">
+                                <rect key="frame" x="273" y="179" width="54" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.74117647060000003" green="0.76470588240000004" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OfM-Yc-UP5" firstAttribute="top" secondItem="O2F-KA-4Pz" secondAttribute="bottom" constant="20" id="448-Xh-8GH"/>
+                            <constraint firstItem="EHw-iX-Jz0" firstAttribute="top" secondItem="5aW-Q1-Qjm" secondAttribute="bottom" constant="8" id="9RP-f8-xBU"/>
+                            <constraint firstAttribute="centerX" secondItem="YOB-4y-geK" secondAttribute="centerX" id="KIG-c3-aFV"/>
+                            <constraint firstAttribute="centerX" secondItem="OfM-Yc-UP5" secondAttribute="centerX" id="TcC-ES-BLe"/>
+                            <constraint firstItem="5aW-Q1-Qjm" firstAttribute="top" secondItem="YOB-4y-geK" secondAttribute="bottom" constant="20" id="WIK-kx-ifD"/>
+                            <constraint firstItem="YOB-4y-geK" firstAttribute="top" secondItem="OfM-Yc-UP5" secondAttribute="bottom" constant="8" id="Xda-Yp-Vne"/>
+                            <constraint firstItem="pmR-Nt-3sZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EHw-iX-Jz0" secondAttribute="bottom" constant="16" id="hlw-gv-Gup"/>
+                            <constraint firstItem="ekS-cX-GWp" firstAttribute="top" secondItem="pmR-Nt-3sZ" secondAttribute="bottom" constant="20" id="loc-GQ-OYO"/>
+                            <constraint firstAttribute="centerX" secondItem="5aW-Q1-Qjm" secondAttribute="centerX" id="nXQ-wZ-BCW"/>
+                            <constraint firstAttribute="centerX" secondItem="pmR-Nt-3sZ" secondAttribute="centerX" id="raK-o3-K8K"/>
+                            <constraint firstAttribute="centerX" secondItem="EHw-iX-Jz0" secondAttribute="centerX" id="yNG-Qr-KrW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Today" id="SZP-pu-x7A">
+                        <barButtonItem key="leftBarButtonItem" title="Login" id="lMt-Vg-4vp">
+                            <connections>
+                                <action selector="pressedLogin" destination="4tn-aL-MnG" id="SJp-eh-G66"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="hqS-nb-sY8">
+                            <connections>
+                                <action selector="refresh:" destination="4tn-aL-MnG" id="CLa-fa-kis"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pauseTodayLabel" destination="5aW-Q1-Qjm" id="nUX-2Z-y3F"/>
+                        <outlet property="startStopButton" destination="pmR-Nt-3sZ" id="npV-FH-BrF"/>
+                        <outlet property="timeTodayLabel" destination="OfM-Yc-UP5" id="fJC-M2-arG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vFi-2E-4Rw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="402"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="M7c-Cc-tUP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gzh-Vg-RSm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vBu-xe-yA6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4tn-aL-MnG" kind="relationship" relationship="rootViewController" id="jQz-fC-EQt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vhc-to-kQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="236" y="402"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.12549019610000001" green="0.40784313729999999" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+</document>
