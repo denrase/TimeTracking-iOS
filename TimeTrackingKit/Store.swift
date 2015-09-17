@@ -17,7 +17,7 @@ public class Store {
     static var cachedAuthenticationToken: String?
     
     public class func isLoggedIn() -> Bool {
-        return count(Store.authenticationToken()) > 0
+        return Store.authenticationToken().characters.count > 0
     }
     
     public class func authenticationToken() -> String {

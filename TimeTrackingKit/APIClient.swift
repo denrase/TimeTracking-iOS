@@ -33,7 +33,7 @@ public class APIClient {
     private func setupLoginManager(user: String, pasword: String) {
         let plainString = "\(user):\(pasword)" as NSString
         let plainData = plainString.dataUsingEncoding(NSUTF8StringEncoding)
-        let base64String = plainData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(0))
+        let base64String = plainData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
         
         var defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
         defaultHeaders["Authorization"] = "Basic " + base64String!
@@ -46,11 +46,11 @@ public class APIClient {
     
     private func setupStatusManager() {
         if (Store.isLoggedIn()) {
-            var xHTTPAdditionalHeaders: [NSObject : AnyObject] = ["X-API-AUTH-TOKEN": Store.authenticationToken()]
-            Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = xHTTPAdditionalHeaders
-        
+            var defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
+            defaultHeaders["X-API-AUTH-TOKEN"] = Store.authenticationToken()
+            
             let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-            configuration.HTTPAdditionalHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders
+            configuration.HTTPAdditionalHeaders = defaultHeaders
             
             self.statusManager = Alamofire.Manager(configuration: configuration)
         }
@@ -63,17 +63,18 @@ public class APIClient {
         setupLoginManager(email, pasword: password)
         self.loginManager?.request(.POST, "\(self.apiBaseUrl)/login")
             .authenticate(user: email, password: password)
-            .responseJSON() { (request, response, json, error) in
+            .responseJSON { _, _, result in
                         
-                let dict = json as? NSDictionary
-                let token = dict?["token"] as? String
-                        
-                if let authorizationToken = token {
-                    Store.setAuthenticationToken(authorizationToken)
+                if let dict = result.value as? NSDictionary, token = dict["token"] as? String {
+                    Store.setAuthenticationToken(token)
                     self.setupStatusManager()
+                    
+                    completion(token: token, error: nil)
                 }
-                        
-                completion(token: token, error: error)
+                else {
+                    let error = NSError(domain: "", code: -1, userInfo: nil)
+                    completion(token: nil, error: error)
+                }
             }
     }
     
@@ -82,32 +83,33 @@ public class APIClient {
         setupStatusManager()
         let status = "\(self.apiBaseUrl)/status"
         self.statusManager?.request(.GET, status)
-            .responseJSON() { (request, response, json, error) in
-                self.processRequest(completion, request: request, response: response, json: json, error: error)
+            .responseJSON { _, response, result in
+                print(response)
+                print(result)
+                self.processRequest(completion, result: result)
             }
     }
     
     public func start(completion: StatusResponse) {
         apiBaseUrl = Store.apiBaseUrl()
         self.statusManager?.request(.POST, "\(self.apiBaseUrl)/status/start")
-            .responseJSON() { (request, response, json, error) in
-                self.processRequest(completion, request: request, response: response, json: json, error: error)
-            }
+            .responseJSON { _, response, result in
+                self.processRequest(completion, result: result)
+        }
     }
     
     public func stop(completion: StatusResponse) {
         apiBaseUrl = Store.apiBaseUrl()
         self.statusManager?.request(.POST, "\(self.apiBaseUrl)/status/stop")
-            .responseJSON() { (request, response, json, error) in
-                self.processRequest(completion, request: request, response: response, json: json, error: error)
-            }
+            .responseJSON { _, response, result in
+                self.processRequest(completion, result: result)
+        }
     }
     
-    
-    private func processRequest(completion: StatusResponse, request: NSURLRequest, response: NSHTTPURLResponse?, json: AnyObject?, error: NSError?) {
-        let dict = json as? NSDictionary
-        debugPrintln(dict)
-        debugPrintln(request)
+    private func processRequest(completion: StatusResponse, result: Result<AnyObject>) {
+        let dict = result.value as? NSDictionary
+        
+        
         
         if let status = dict?["status"] as? String {
             if let duration = dict?["duration"] as? String {
@@ -117,7 +119,7 @@ public class APIClient {
             }
         }
         else {
-            debugPrintln(error)
+            let error = NSError(domain: "", code: -1, userInfo: nil)
             completion(workDay: nil, error: error);
         }
     }

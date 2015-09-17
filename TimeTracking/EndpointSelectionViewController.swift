@@ -34,7 +34,7 @@ class EndpointSelectionViewController: UITableViewController {
         
         let endpoint = endpoints[indexPath.row]
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("EndpointCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("EndpointCell")!
         cell.textLabel?.text = endpoint.name
         cell.detailTextLabel?.text = endpoint.url
         

@@ -87,7 +87,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
         self.persistUserData()
         self.startLoadingIndicator()
         
-        APIClient.sharedInstance.login(self.emailTextField.text, password: self.passwordTextField.text) { (token, error) -> Void in
+        APIClient.sharedInstance.login(self.emailTextField.text!, password: self.passwordTextField.text!) { (token, error) -> Void in
             self.stopLoadingIndicator()
             
             if (Store.isLoggedIn()) {
@@ -125,8 +125,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
     }
     
     func persistUserData() {
-        Store.setApiBaseUrl(self.apiBaseUrlTextField.text)
-        Store.setUserIdentifier(self.emailTextField.text)
+        Store.setApiBaseUrl(self.apiBaseUrlTextField.text!)
+        Store.setUserIdentifier(self.emailTextField.text!)
     }
     
     // MARK: UITextFieldDelegate

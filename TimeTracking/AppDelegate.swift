@@ -26,12 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = TimeTrackingColors.blue()
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        UINavigationBar.appearance().titleTextAttributes = titleDict as [NSObject : AnyObject]
+        UINavigationBar.appearance().titleTextAttributes = titleDict as? [String : AnyObject]
     }
     
     func application(application: UIApplication,
         handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?,
-        reply: (([NSObject : AnyObject]!) -> Void)!) {
+        reply: (([NSObject : AnyObject]?) -> Void)) {
             // could be used to update ui of application if it is currently running while operation is performed on the watch
             
     }
