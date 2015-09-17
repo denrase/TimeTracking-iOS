@@ -31,26 +31,27 @@ public class Store {
     }
     
     private class func retrieveTokenFromKeychain() -> String {
-        let tokenKeychainItem = KeychainItemWrapper(identifier: Store.TokenKeychainItem, accessGroup: Store.AppGroup)
-        let tokenData = tokenKeychainItem.objectForKey(kSecValueData) as! NSData!
-        let tokenString = NSString(data: tokenData, encoding: NSUTF8StringEncoding)
+        let keychain = Keychain(service: Store.TokenKeychainItem, accessGroup: Store.AppGroup)
         
-        switch(tokenString) {
-        case .Some(let token):
-            return String(token)
-        default:
+        if let token = keychain[string: String(kSecValueData)] {
+            return token;
+        }
+        else {
             return ""
         }
     }
     
     public class func resetKeychain() {
-        let tokenKeychainItem = KeychainItemWrapper(identifier: Store.TokenKeychainItem, accessGroup: Store.AppGroup)
-        tokenKeychainItem.resetKeychainItem()
+        let keychain = Keychain(service: Store.TokenKeychainItem, accessGroup: Store.AppGroup)
+        
+        if let error = try? keychain.removeAll() {
+            print(error)
+        }
     }
     
     public class func setAuthenticationToken(token: String) {
-        let tokenKeychainItem = KeychainItemWrapper(identifier: Store.TokenKeychainItem, accessGroup: Store.AppGroup)
-        tokenKeychainItem.setObject(token, forKey: kSecValueData)
+        let keychain = Keychain(service: Store.TokenKeychainItem, accessGroup: Store.AppGroup)
+        keychain[String(kSecValueData)] = token
     }
     
     public class func apiBaseUrl() -> String {

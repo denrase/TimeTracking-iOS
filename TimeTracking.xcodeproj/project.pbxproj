@@ -12,21 +12,26 @@
 		921857271B3F08E7002402D0 /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 921857261B3F08E7002402D0 /* configuration.plist */; };
 		9218572A1B3F0A6A002402D0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921857291B3F0A6A002402D0 /* Configuration.swift */; };
 		9218572C1B3F0A75002402D0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9218572B1B3F0A75002402D0 /* Endpoint.swift */; };
-		925406361AAE443B005F72CA /* TimeTrackingKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 925406351AAE443B005F72CA /* TimeTrackingKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		925406521AAE4457005F72CA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925406511AAE4457005F72CA /* Store.swift */; };
-		925406821AAE4E94005F72CA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925406811AAE4E94005F72CA /* APIClient.swift */; };
 		925860DC1BAB398D0097ECBC /* TimeTracking WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 925ADC041AF39D8B00BB35BA /* TimeTracking WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		925860DF1BAB398D0097ECBC /* TimeTracking WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 925ADC0E1AF39D8B00BB35BA /* TimeTracking WatchKit App.app */; };
-		925860E21BAB3EFF0097ECBC /* TimeTrackingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925406311AAE443B005F72CA /* TimeTrackingKit.framework */; };
-		925860E31BAB3EFF0097ECBC /* TimeTrackingKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 925406311AAE443B005F72CA /* TimeTrackingKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		925860FE1BAB48100097ECBC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FA1BAB48100097ECBC /* APIClient.swift */; settings = {ASSET_TAGS = (); }; };
+		925860FF1BAB48100097ECBC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FA1BAB48100097ECBC /* APIClient.swift */; settings = {ASSET_TAGS = (); }; };
+		925861001BAB48100097ECBC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FB1BAB48100097ECBC /* Store.swift */; settings = {ASSET_TAGS = (); }; };
+		925861021BAB48100097ECBC /* TimeTrackingColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FC1BAB48100097ECBC /* TimeTrackingColors.swift */; settings = {ASSET_TAGS = (); }; };
+		925861031BAB48100097ECBC /* TimeTrackingColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FC1BAB48100097ECBC /* TimeTrackingColors.swift */; settings = {ASSET_TAGS = (); }; };
+		925861041BAB48100097ECBC /* WorkDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FD1BAB48100097ECBC /* WorkDay.swift */; settings = {ASSET_TAGS = (); }; };
+		925861051BAB48100097ECBC /* WorkDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FD1BAB48100097ECBC /* WorkDay.swift */; settings = {ASSET_TAGS = (); }; };
+		9258610A1BAB48640097ECBC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925861091BAB48640097ECBC /* Alamofire.framework */; };
+		9258610B1BAB48640097ECBC /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 925861091BAB48640097ECBC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9258610E1BAB48CE0097ECBC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9258610D1BAB48CE0097ECBC /* Alamofire.framework */; };
+		9258610F1BAB48CE0097ECBC /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9258610D1BAB48CE0097ECBC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		925861241BAB4F5A0097ECBC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FB1BAB48100097ECBC /* Store.swift */; settings = {ASSET_TAGS = (); }; };
+		9258612F1BAB53910097ECBC /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258612E1BAB53910097ECBC /* Keychain.swift */; settings = {ASSET_TAGS = (); }; };
+		925861301BAB53910097ECBC /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258612E1BAB53910097ECBC /* Keychain.swift */; settings = {ASSET_TAGS = (); }; };
 		925ADC0B1AF39D8B00BB35BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 925ADC0A1AF39D8B00BB35BA /* Images.xcassets */; };
 		925ADC191AF39D8B00BB35BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 925ADC181AF39D8B00BB35BA /* Images.xcassets */; };
 		925ADC241AF39DA200BB35BA /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 925ADC231AF39DA200BB35BA /* Today.storyboard */; };
 		925ADC261AF39DD000BB35BA /* TodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925ADC251AF39DD000BB35BA /* TodayController.swift */; };
-		9264936E1AB47E040086E70A /* WorkDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264936D1AB47E040086E70A /* WorkDay.swift */; };
-		9272E96B1B43457B00E5D484 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9272E96A1B43457B00E5D484 /* Alamofire.framework */; };
-		9272E96C1B43457B00E5D484 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9272E96A1B43457B00E5D484 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9272E96E1B4345CB00E5D484 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9272E96A1B43457B00E5D484 /* Alamofire.framework */; };
 		927385701B42FB9600CE05B2 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9273856F1B42FB9600CE05B2 /* Launch.storyboard */; };
 		92854D201AAE312D0062CF70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92854D1F1AAE312D0062CF70 /* AppDelegate.swift */; };
 		92854D271AAE312D0062CF70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92854D261AAE312D0062CF70 /* Images.xcassets */; };
@@ -35,9 +40,6 @@
 		92854D451AAE32710062CF70 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92854D441AAE32710062CF70 /* TodayViewController.swift */; };
 		92AB58891AAF8715008B4603 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB58881AAF8715008B4603 /* LoginViewController.swift */; };
 		92AB588B1AAF87A2008B4603 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AB588A1AAF87A2008B4603 /* Login.storyboard */; };
-		92AB58911AAF9EA6008B4603 /* TimeTrackingColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB58901AAF9EA6008B4603 /* TimeTrackingColors.swift */; };
-		92FB25461ABF2A0800DF4FB6 /* KeychainItemWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 92FB25441ABF2A0800DF4FB6 /* KeychainItemWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		92FB25471ABF2A0800DF4FB6 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FB25451ABF2A0800DF4FB6 /* KeychainItemWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +56,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 925ADC0D1AF39D8B00BB35BA;
 			remoteInfo = "TimeTracking WatchKit App";
-		};
-		925860E41BAB3EFF0097ECBC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 92854D121AAE312D0062CF70 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 925406301AAE443B005F72CA;
-			remoteInfo = TimeTrackingKit;
 		};
 		92854D301AAE312D0062CF70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -94,14 +89,24 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		92A0D74C1B3FF98E00ED3619 /* Embed Frameworks */ = {
+		925860F11BAB46300097ECBC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9272E96C1B43457B00E5D484 /* Alamofire.framework in Embed Frameworks */,
-				925860E31BAB3EFF0097ECBC /* TimeTrackingKit.framework in Embed Frameworks */,
+				9258610B1BAB48640097ECBC /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		925861101BAB48CE0097ECBC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9258610F1BAB48CE0097ECBC /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,12 +120,16 @@
 		921857291B3F0A6A002402D0 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		9218572B1B3F0A75002402D0 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		922492561AF3AAA600DFC248 /* TimeTracking WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TimeTracking WatchKit Extension.entitlements"; sourceTree = "<group>"; };
-		925406311AAE443B005F72CA /* TimeTrackingKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeTrackingKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		925406341AAE443B005F72CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		925406351AAE443B005F72CA /* TimeTrackingKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeTrackingKit.h; sourceTree = "<group>"; };
-		925406511AAE4457005F72CA /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		925406531AAE46E9005F72CA /* TimeTracking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimeTracking.entitlements; sourceTree = "<group>"; };
-		925406811AAE4E94005F72CA /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		925860FA1BAB48100097ECBC /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		925860FB1BAB48100097ECBC /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		925860FC1BAB48100097ECBC /* TimeTrackingColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTrackingColors.swift; sourceTree = "<group>"; };
+		925860FD1BAB48100097ECBC /* WorkDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkDay.swift; sourceTree = "<group>"; };
+		925861091BAB48640097ECBC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/watchOS/Alamofire.framework; sourceTree = "<group>"; };
+		9258610D1BAB48CE0097ECBC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		9258611C1BAB4DD40097ECBC /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = ../Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
+		925861211BAB4E1A0097ECBC /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = ../Carthage/Build/watchOS/Locksmith.framework; sourceTree = "<group>"; };
+		9258612E1BAB53910097ECBC /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		925ADC041AF39D8B00BB35BA /* TimeTracking WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TimeTracking WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		925ADC071AF39D8B00BB35BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		925ADC0A1AF39D8B00BB35BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -129,8 +138,6 @@
 		925ADC181AF39D8B00BB35BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		925ADC231AF39DA200BB35BA /* Today.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Today.storyboard; sourceTree = "<group>"; };
 		925ADC251AF39DD000BB35BA /* TodayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayController.swift; sourceTree = "<group>"; };
-		9264936D1AB47E040086E70A /* WorkDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkDay.swift; sourceTree = "<group>"; };
-		9272E96A1B43457B00E5D484 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9273856F1B42FB9600CE05B2 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		92854D1A1AAE312D0062CF70 /* TimeTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92854D1E1AAE312D0062CF70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,24 +150,14 @@
 		92854D441AAE32710062CF70 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		92AB58881AAF8715008B4603 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		92AB588A1AAF87A2008B4603 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		92AB58901AAF9EA6008B4603 /* TimeTrackingColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTrackingColors.swift; sourceTree = "<group>"; };
-		92FB25441ABF2A0800DF4FB6 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		92FB25451ABF2A0800DF4FB6 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9254062D1AAE443B005F72CA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9272E96E1B4345CB00E5D484 /* Alamofire.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		925ADC011AF39D8B00BB35BA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9258610A1BAB48640097ECBC /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,8 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9272E96B1B43457B00E5D484 /* Alamofire.framework in Frameworks */,
-				925860E21BAB3EFF0097ECBC /* TimeTrackingKit.framework in Frameworks */,
+				9258610E1BAB48CE0097ECBC /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,34 +182,63 @@
 		921857281B3F0A56002402D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				925860FB1BAB48100097ECBC /* Store.swift */,
+				925860FD1BAB48100097ECBC /* WorkDay.swift */,
 				9218572B1B3F0A75002402D0 /* Endpoint.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		925406321AAE443B005F72CA /* TimeTrackingKit */ = {
+		9258610C1BAB48A50097ECBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				925406351AAE443B005F72CA /* TimeTrackingKit.h */,
-				92FB25441ABF2A0800DF4FB6 /* KeychainItemWrapper.h */,
-				92FB25451ABF2A0800DF4FB6 /* KeychainItemWrapper.m */,
-				92AB58901AAF9EA6008B4603 /* TimeTrackingColors.swift */,
-				9264936D1AB47E040086E70A /* WorkDay.swift */,
-				925406511AAE4457005F72CA /* Store.swift */,
-				925406811AAE4E94005F72CA /* APIClient.swift */,
-				925406341AAE443B005F72CA /* Info.plist */,
+				9258610D1BAB48CE0097ECBC /* Alamofire.framework */,
+				9258611C1BAB4DD40097ECBC /* Locksmith.framework */,
 			);
-			path = TimeTrackingKit;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		925861111BAB48DA0097ECBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				925861091BAB48640097ECBC /* Alamofire.framework */,
+				925861211BAB4E1A0097ECBC /* Locksmith.framework */,
+			);
+			name = Frameworks;
+			path = "../TimeTracking WatchKit App";
+			sourceTree = "<group>";
+		};
+		925861121BAB490C0097ECBC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3715B1661B160BAE00C00A76 /* GlanceController.swift */,
+				925ADC251AF39DD000BB35BA /* TodayController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		925861131BAB49200097ECBC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				925ADC231AF39DA200BB35BA /* Today.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		925861141BAB49460097ECBC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				925860FA1BAB48100097ECBC /* APIClient.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 		925ADC051AF39D8B00BB35BA /* TimeTracking WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				922492561AF3AAA600DFC248 /* TimeTracking WatchKit Extension.entitlements */,
-				3715B1661B160BAE00C00A76 /* GlanceController.swift */,
-				925ADC251AF39DD000BB35BA /* TodayController.swift */,
-				925ADC0A1AF39D8B00BB35BA /* Images.xcassets */,
+				925861121BAB490C0097ECBC /* Controller */,
 				925ADC061AF39D8B00BB35BA /* Supporting Files */,
+				925861111BAB48DA0097ECBC /* Frameworks */,
 			);
 			path = "TimeTracking WatchKit Extension";
 			sourceTree = "<group>";
@@ -221,6 +246,8 @@
 		925ADC061AF39D8B00BB35BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				922492561AF3AAA600DFC248 /* TimeTracking WatchKit Extension.entitlements */,
+				925ADC0A1AF39D8B00BB35BA /* Images.xcassets */,
 				925ADC071AF39D8B00BB35BA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -229,8 +256,7 @@
 		925ADC121AF39D8B00BB35BA /* TimeTracking WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
-				925ADC231AF39DA200BB35BA /* Today.storyboard */,
-				925ADC181AF39D8B00BB35BA /* Images.xcassets */,
+				925861131BAB49200097ECBC /* Storyboards */,
 				925ADC131AF39D8B00BB35BA /* Supporting Files */,
 			);
 			path = "TimeTracking WatchKit App";
@@ -239,28 +265,19 @@
 		925ADC131AF39D8B00BB35BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				925ADC181AF39D8B00BB35BA /* Images.xcassets */,
 				925ADC141AF39D8B00BB35BA /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9272E96F1B43471500E5D484 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9272E96A1B43457B00E5D484 /* Alamofire.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		92854D111AAE312D0062CF70 = {
 			isa = PBXGroup;
 			children = (
 				92854D1C1AAE312D0062CF70 /* TimeTracking */,
-				925406321AAE443B005F72CA /* TimeTrackingKit */,
 				92854D321AAE312D0062CF70 /* TimeTrackingTests */,
 				925ADC051AF39D8B00BB35BA /* TimeTracking WatchKit Extension */,
 				925ADC121AF39D8B00BB35BA /* TimeTracking WatchKit App */,
-				9272E96F1B43471500E5D484 /* Frameworks */,
 				92854D1B1AAE312D0062CF70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -270,7 +287,6 @@
 			children = (
 				92854D1A1AAE312D0062CF70 /* TimeTracking.app */,
 				92854D2F1AAE312D0062CF70 /* TimeTrackingTests.xctest */,
-				925406311AAE443B005F72CA /* TimeTrackingKit.framework */,
 				925ADC041AF39D8B00BB35BA /* TimeTracking WatchKit Extension.appex */,
 				925ADC0E1AF39D8B00BB35BA /* TimeTracking WatchKit App.app */,
 			);
@@ -283,8 +299,10 @@
 				92854D3F1AAE31360062CF70 /* Application */,
 				92854D401AAE31430062CF70 /* Controller */,
 				921857281B3F0A56002402D0 /* Model */,
+				925861141BAB49460097ECBC /* Network */,
 				92854D411AAE31F50062CF70 /* Storyboards */,
 				92854D1D1AAE312D0062CF70 /* Supporting Files */,
+				9258610C1BAB48A50097ECBC /* Frameworks */,
 			);
 			path = TimeTracking;
 			sourceTree = "<group>";
@@ -322,6 +340,8 @@
 			children = (
 				92854D1F1AAE312D0062CF70 /* AppDelegate.swift */,
 				921857291B3F0A6A002402D0 /* Configuration.swift */,
+				925860FC1BAB48100097ECBC /* TimeTrackingColors.swift */,
+				9258612E1BAB53910097ECBC /* Keychain.swift */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -348,36 +368,7 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		9254062E1AAE443B005F72CA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				925406361AAE443B005F72CA /* TimeTrackingKit.h in Headers */,
-				92FB25461ABF2A0800DF4FB6 /* KeychainItemWrapper.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		925406301AAE443B005F72CA /* TimeTrackingKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9254064B1AAE443B005F72CA /* Build configuration list for PBXNativeTarget "TimeTrackingKit" */;
-			buildPhases = (
-				9254062C1AAE443B005F72CA /* Sources */,
-				9254062D1AAE443B005F72CA /* Frameworks */,
-				9254062E1AAE443B005F72CA /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TimeTrackingKit;
-			productName = TimeTrackingKit;
-			productReference = 925406311AAE443B005F72CA /* TimeTrackingKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		925ADC031AF39D8B00BB35BA /* TimeTracking WatchKit Extension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 925ADC221AF39D8B00BB35BA /* Build configuration list for PBXNativeTarget "TimeTracking WatchKit Extension" */;
@@ -385,6 +376,7 @@
 				925ADC001AF39D8B00BB35BA /* Sources */,
 				925ADC011AF39D8B00BB35BA /* Frameworks */,
 				925ADC021AF39D8B00BB35BA /* Resources */,
+				925860F11BAB46300097ECBC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -419,15 +411,14 @@
 				92854D161AAE312D0062CF70 /* Sources */,
 				92854D171AAE312D0062CF70 /* Frameworks */,
 				92854D181AAE312D0062CF70 /* Resources */,
-				92A0D74C1B3FF98E00ED3619 /* Embed Frameworks */,
 				9272E96D1B43458500E5D484 /* ShellScript */,
 				925860E11BAB398D0097ECBC /* Embed Watch Content */,
+				925861101BAB48CE0097ECBC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				925860DE1BAB398D0097ECBC /* PBXTargetDependency */,
-				925860E51BAB3EFF0097ECBC /* PBXTargetDependency */,
 			);
 			name = TimeTracking;
 			productName = TimeTracking;
@@ -463,13 +454,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Bytepoets;
 				TargetAttributes = {
-					925406301AAE443B005F72CA = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 526JH82JLW;
-					};
 					925ADC031AF39D8B00BB35BA = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 526JH82JLW;
+						DevelopmentTeam = 9ZFD4KCY8F;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -515,7 +502,6 @@
 			projectRoot = "";
 			targets = (
 				92854D191AAE312D0062CF70 /* TimeTracking */,
-				925406301AAE443B005F72CA /* TimeTrackingKit */,
 				92854D2E1AAE312D0062CF70 /* TimeTrackingTests */,
 				925ADC031AF39D8B00BB35BA /* TimeTracking WatchKit Extension */,
 				925ADC0D1AF39D8B00BB35BA /* TimeTracking WatchKit App */,
@@ -580,24 +566,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9254062C1AAE443B005F72CA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				925406521AAE4457005F72CA /* Store.swift in Sources */,
-				925406821AAE4E94005F72CA /* APIClient.swift in Sources */,
-				9264936E1AB47E040086E70A /* WorkDay.swift in Sources */,
-				92FB25471ABF2A0800DF4FB6 /* KeychainItemWrapper.m in Sources */,
-				92AB58911AAF9EA6008B4603 /* TimeTrackingColors.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		925ADC001AF39D8B00BB35BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925861241BAB4F5A0097ECBC /* Store.swift in Sources */,
+				925861031BAB48100097ECBC /* TimeTrackingColors.swift in Sources */,
 				925ADC261AF39DD000BB35BA /* TodayController.swift in Sources */,
 				3715B1671B160BAF00C00A76 /* GlanceController.swift in Sources */,
+				925860FF1BAB48100097ECBC /* APIClient.swift in Sources */,
+				925861051BAB48100097ECBC /* WorkDay.swift in Sources */,
+				925861301BAB53910097ECBC /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,9 +585,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				92854D201AAE312D0062CF70 /* AppDelegate.swift in Sources */,
+				925860FE1BAB48100097ECBC /* APIClient.swift in Sources */,
 				9218572A1B3F0A6A002402D0 /* Configuration.swift in Sources */,
+				925861001BAB48100097ECBC /* Store.swift in Sources */,
 				92854D451AAE32710062CF70 /* TodayViewController.swift in Sources */,
+				9258612F1BAB53910097ECBC /* Keychain.swift in Sources */,
+				925861021BAB48100097ECBC /* TimeTrackingColors.swift in Sources */,
 				921857251B3EE666002402D0 /* EndpointSelectionViewController.swift in Sources */,
+				925861041BAB48100097ECBC /* WorkDay.swift in Sources */,
 				9218572C1B3F0A75002402D0 /* Endpoint.swift in Sources */,
 				92AB58891AAF8715008B4603 /* LoginViewController.swift in Sources */,
 			);
@@ -635,11 +619,6 @@
 			target = 925ADC0D1AF39D8B00BB35BA /* TimeTracking WatchKit App */;
 			targetProxy = 925860DD1BAB398D0097ECBC /* PBXContainerItemProxy */;
 		};
-		925860E51BAB3EFF0097ECBC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 925406301AAE443B005F72CA /* TimeTrackingKit */;
-			targetProxy = 925860E41BAB3EFF0097ECBC /* PBXContainerItemProxy */;
-		};
 		92854D311AAE312D0062CF70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 92854D191AAE312D0062CF70 /* TimeTracking */;
@@ -648,87 +627,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		9254064C1AAE443B005F72CA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 20150630;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/TimeTrackingKit",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TimeTrackingKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bytepoets.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9254064D1AAE443B005F72CA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 20150630;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/TimeTrackingKit",
-				);
-				INFOPLIST_FILE = TimeTrackingKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bytepoets.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		925ADC1D1AF39D8B00BB35BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "TimeTracking WatchKit Extension/TimeTracking WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -743,6 +653,8 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -751,14 +663,16 @@
 		925ADC1E1AF39D8B00BB35BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "TimeTracking WatchKit Extension/TimeTracking WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "TimeTracking WatchKit Extension/Info.plist";
@@ -769,6 +683,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -910,7 +825,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -934,7 +848,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -991,15 +904,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9254064B1AAE443B005F72CA /* Build configuration list for PBXNativeTarget "TimeTrackingKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9254064C1AAE443B005F72CA /* Debug */,
-				9254064D1AAE443B005F72CA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		925ADC211AF39D8B00BB35BA /* Build configuration list for PBXNativeTarget "TimeTracking WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
