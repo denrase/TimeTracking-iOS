@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TimeTrackingKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
     

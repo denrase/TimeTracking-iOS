@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TimeTrackingKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
