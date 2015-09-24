@@ -191,7 +191,9 @@ class TodayViewController: UIViewController {
                 Store.setAuthenticationToken("")
                 self.todaysWorkDay = nil
                 self.updateInterface()
+                
                 Store.clearAuthenticationToken()
+                APIClient.sharedInstance.clearAuthenticationToken()
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
             

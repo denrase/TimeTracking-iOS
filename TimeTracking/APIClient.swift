@@ -75,6 +75,11 @@ public class APIClient {
         setupStatusManager()
     }
     
+    public func clearAuthenticationToken() {
+        self.authenticationToken = "";
+        setupStatusManager()
+    }
+    
     // ROUTES
     
     public func login(email: String, password: String, completion: LoginResponse) {
