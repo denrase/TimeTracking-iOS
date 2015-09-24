@@ -52,14 +52,14 @@ public class APIClient {
         
         if (self.authenticationToken.characters.count > 0) {
             defaultHeaders["X-API-AUTH-TOKEN"] = self.authenticationToken
+            let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+            configuration.HTTPAdditionalHeaders = defaultHeaders
+            self.statusManager = Alamofire.Manager(configuration: configuration)
         }
         else {
             defaultHeaders.removeValueForKey("X-API-AUTH-TOKEN")
+            self.statusManager = nil
         }
-        
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        configuration.HTTPAdditionalHeaders = defaultHeaders
-        self.statusManager = Alamofire.Manager(configuration: configuration)
     }
     
     // -- PUBLIC API ---
@@ -100,6 +100,7 @@ public class APIClient {
     }
     
     public func status(completion: StatusResponse) {
+        setupStatusManager()
         let status = "\(self.apiBaseUrl)/status"
         self.statusManager?.request(.GET, status)
             .responseJSON { _, response, result in
@@ -108,6 +109,7 @@ public class APIClient {
     }
     
     public func start(completion: StatusResponse) {
+        setupStatusManager()
         self.statusManager?.request(.POST, "\(self.apiBaseUrl)/status/start")
             .responseJSON { _, response, result in
                 self.processRequest(completion, result: result)
@@ -115,6 +117,7 @@ public class APIClient {
     }
     
     public func stop(completion: StatusResponse) {
+        setupStatusManager()
         self.statusManager?.request(.POST, "\(self.apiBaseUrl)/status/stop")
             .responseJSON { _, response, result in
                 self.processRequest(completion, result: result)

@@ -20,8 +20,14 @@ class GlanceController: WKInterfaceController {
     
     override func willActivate() {
         super.willActivate()
+        setupApiClient()
         updateInterface()
         fetchStatus()
+    }
+    
+    func setupApiClient() {
+        APIClient.sharedInstance.setApiBaseUrl(Store.apiBaseUrl())
+        APIClient.sharedInstance.setAuthenticationToken(Store.authenticationToken())
     }
     
     func updateInterface() {

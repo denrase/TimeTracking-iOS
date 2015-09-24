@@ -10,6 +10,9 @@
 		3715B1671B160BAF00C00A76 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715B1661B160BAE00C00A76 /* GlanceController.swift */; };
 		373D124E1BB3E1D800D44CCB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9258610D1BAB48CE0097ECBC /* Alamofire.framework */; };
 		373D124F1BB3E21F00D44CCB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925861091BAB48640097ECBC /* Alamofire.framework */; };
+		373D12521BB3F4CF00D44CCB /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373D12511BB3F4CF00D44CCB /* WatchConnectivity.framework */; };
+		373D12541BB3F60F00D44CCB /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373D12531BB3F60F00D44CCB /* WatchConnectivity.framework */; };
+		373D12551BB3F63F00D44CCB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FB1BAB48100097ECBC /* Store.swift */; settings = {ASSET_TAGS = (); }; };
 		921857251B3EE666002402D0 /* EndpointSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921857241B3EE666002402D0 /* EndpointSelectionViewController.swift */; };
 		921857271B3F08E7002402D0 /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 921857261B3F08E7002402D0 /* configuration.plist */; };
 		9218572A1B3F0A6A002402D0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921857291B3F0A6A002402D0 /* Configuration.swift */; };
@@ -90,6 +93,8 @@
 
 /* Begin PBXFileReference section */
 		3715B1661B160BAE00C00A76 /* GlanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		373D12511BB3F4CF00D44CCB /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		373D12531BB3F60F00D44CCB /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		921857241B3EE666002402D0 /* EndpointSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointSelectionViewController.swift; sourceTree = "<group>"; };
 		921857261B3F08E7002402D0 /* configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
 		921857291B3F0A6A002402D0 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -100,8 +105,6 @@
 		925860FD1BAB48100097ECBC /* WorkDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkDay.swift; sourceTree = "<group>"; };
 		925861091BAB48640097ECBC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/watchOS/Alamofire.framework; sourceTree = "<group>"; };
 		9258610D1BAB48CE0097ECBC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		9258611C1BAB4DD40097ECBC /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = ../Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
-		925861211BAB4E1A0097ECBC /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = ../Carthage/Build/watchOS/Locksmith.framework; sourceTree = "<group>"; };
 		9258612E1BAB53910097ECBC /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		925ADC041AF39D8B00BB35BA /* TimeTracking WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TimeTracking WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		925ADC071AF39D8B00BB35BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373D12541BB3F60F00D44CCB /* WatchConnectivity.framework in Frameworks */,
 				373D124F1BB3E21F00D44CCB /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373D12521BB3F4CF00D44CCB /* WatchConnectivity.framework in Frameworks */,
 				373D124E1BB3E1D800D44CCB /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,8 +170,8 @@
 		9258610C1BAB48A50097ECBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				373D12511BB3F4CF00D44CCB /* WatchConnectivity.framework */,
 				9258610D1BAB48CE0097ECBC /* Alamofire.framework */,
-				9258611C1BAB4DD40097ECBC /* Locksmith.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,8 +179,8 @@
 		925861111BAB48DA0097ECBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				373D12531BB3F60F00D44CCB /* WatchConnectivity.framework */,
 				925861091BAB48640097ECBC /* Alamofire.framework */,
-				925861211BAB4E1A0097ECBC /* Locksmith.framework */,
 			);
 			name = Frameworks;
 			path = "../TimeTracking WatchKit App";
@@ -556,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373D12551BB3F63F00D44CCB /* Store.swift in Sources */,
 				925861031BAB48100097ECBC /* TimeTrackingColors.swift in Sources */,
 				925ADC261AF39DD000BB35BA /* TodayController.swift in Sources */,
 				3715B1671B160BAF00C00A76 /* GlanceController.swift in Sources */,

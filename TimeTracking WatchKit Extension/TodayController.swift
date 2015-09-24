@@ -8,8 +8,9 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
-class TodayController: WKInterfaceController {
+class TodayController: WKInterfaceController, WCSessionDelegate {
     
     @IBOutlet weak var disabledTimerLabel: WKInterfaceLabel!
     @IBOutlet weak var workedInterfaceTimer: WKInterfaceTimer!
@@ -22,8 +23,24 @@ class TodayController: WKInterfaceController {
     
     override func willActivate() {
         super.willActivate()
+        
+        setupWatchConnectivity()
+        setupApiClient()
         updateInterface()
         fetchStatus()
+    }
+    
+    func setupWatchConnectivity() {
+        if WCSession.isSupported() {
+            let session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
+    }
+    
+    func setupApiClient() {
+        APIClient.sharedInstance.setApiBaseUrl(Store.apiBaseUrl())
+        APIClient.sharedInstance.setAuthenticationToken(Store.authenticationToken())
     }
     
     @IBAction func pressedStartStop() {
@@ -115,5 +132,21 @@ class TodayController: WKInterfaceController {
             
             self.updateInterface()
         }
+    }
+    
+    // MARK - WCSessionDelegate
+    
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        
+        if let token = applicationContext["token"] as? String, endpoint = applicationContext["endpoint"] as? String {
+            Store.setAuthenticationToken(token)
+            Store.setApiBaseUrl(endpoint)
+        }
+        else {
+            Store.clearAuthenticationToken()
+            APIClient.sharedInstance.clearAuthenticationToken()
+        }
+        
+        setupApiClient()
     }
 }

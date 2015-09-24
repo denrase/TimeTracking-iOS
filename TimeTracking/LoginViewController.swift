@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPresentationControllerDelegate, WCSessionDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -93,6 +94,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
             
             if let token = token {
                 Store.setAuthenticationToken(token)
+                self.sendDataToWatch()
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
             else {
@@ -106,6 +108,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
     
     @IBAction func pressedCancel(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: WatchConnectivity
+    
+    func sendDataToWatch() {
+        if WCSession.isSupported() {
+            let session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+            do {
+                let data = ["token": Store.authenticationToken(), "endpoint": Store.apiBaseUrl()]
+                try WCSession.defaultSession().updateApplicationContext(data)
+            } catch {
+                print("Error sending application context.")
+            }
+        }
     }
     
     // MARK: Helper
