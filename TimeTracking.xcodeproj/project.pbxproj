@@ -95,6 +95,8 @@
 		3715B1661B160BAE00C00A76 /* GlanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		373D12511BB3F4CF00D44CCB /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		373D12531BB3F60F00D44CCB /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
+		373D12561BB4292C00D44CCB /* TimeTracking WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TimeTracking WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		373D12571BB4293C00D44CCB /* TimeTracking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimeTracking.entitlements; sourceTree = "<group>"; };
 		921857241B3EE666002402D0 /* EndpointSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointSelectionViewController.swift; sourceTree = "<group>"; };
 		921857261B3F08E7002402D0 /* configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
 		921857291B3F0A6A002402D0 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				925ADC0A1AF39D8B00BB35BA /* Images.xcassets */,
 				925ADC071AF39D8B00BB35BA /* Info.plist */,
+				373D12561BB4292C00D44CCB /* TimeTracking WatchKit Extension.entitlements */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				92854D261AAE312D0062CF70 /* Images.xcassets */,
 				92854D1E1AAE312D0062CF70 /* Info.plist */,
 				921857261B3F08E7002402D0 /* configuration.plist */,
+				373D12571BB4293C00D44CCB /* TimeTracking.entitlements */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -437,7 +441,7 @@
 								enabled = 0;
 							};
 							com.apple.Keychain = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -453,7 +457,7 @@
 								enabled = 0;
 							};
 							com.apple.Keychain = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -622,6 +626,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "TimeTracking WatchKit Extension/TimeTracking WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
@@ -654,6 +659,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "TimeTracking WatchKit Extension/TimeTracking WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
@@ -810,6 +816,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iOS App Icon";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TimeTracking/TimeTracking.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -832,6 +839,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iOS App Icon";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TimeTracking/TimeTracking.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;

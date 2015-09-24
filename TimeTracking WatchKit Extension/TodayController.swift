@@ -139,12 +139,14 @@ class TodayController: WKInterfaceController, WCSessionDelegate {
     func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
         
         if let token = applicationContext["token"] as? String, endpoint = applicationContext["endpoint"] as? String {
-            Store.setAuthenticationToken(token)
-            Store.setApiBaseUrl(endpoint)
-        }
-        else {
-            Store.clearAuthenticationToken()
-            APIClient.sharedInstance.clearAuthenticationToken()
+            if token.characters.count > 0 && endpoint.characters.count > 0 {
+                Store.setAuthenticationToken(token)
+                Store.setApiBaseUrl(endpoint)
+            }
+            else {
+                Store.clearAuthenticationToken()
+                APIClient.sharedInstance.clearAuthenticationToken()
+            }
         }
         
         setupApiClient()

@@ -7,9 +7,7 @@
 //
 
 import UIKit
-import WatchConnectivity
-
-class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPresentationControllerDelegate, WCSessionDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -18,6 +16,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
+    var loggedIn : (() -> Void)?
     
     class func loginNavigationController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
@@ -94,8 +94,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
             
             if let token = token {
                 Store.setAuthenticationToken(token)
-                self.sendDataToWatch()
-                self.dismissViewControllerAnimated(true, completion: nil)
+                
+                if let loggedIn = self.loggedIn {
+                    loggedIn()
+                }
             }
             else {
                 let alert = UIAlertController(title: "Login Failed", message: "There was a problem with login. Please try again.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -106,25 +108,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
         }
     }
     
-    @IBAction func pressedCancel(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    // MARK: WatchConnectivity
-    
-    func sendDataToWatch() {
-        if WCSession.isSupported() {
-            let session = WCSession.defaultSession()
-            session.delegate = self
-            session.activateSession()
-            do {
-                let data = ["token": Store.authenticationToken(), "endpoint": Store.apiBaseUrl()]
-                try WCSession.defaultSession().updateApplicationContext(data)
-            } catch {
-                print("Error sending application context.")
-            }
-        }
-    }
+
     
     // MARK: Helper
     
@@ -133,7 +117,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
         self.apiBaseUrlTextField.enabled = false
         self.emailTextField.enabled = false
         self.passwordTextField.enabled = false
-        self.loginButton.enabled = false
+        self.loginButton.hidden = true
     }
     
     func stopLoadingIndicator() {
@@ -141,7 +125,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
         self.apiBaseUrlTextField.enabled = true
         self.emailTextField.enabled = true
         self.passwordTextField.enabled = true
-        self.loginButton.enabled = true
+        self.loginButton.hidden = false
     }
     
     func persistUserData() {
