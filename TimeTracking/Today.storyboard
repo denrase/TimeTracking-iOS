@@ -7,7 +7,7 @@
         <!--Today-->
         <scene sceneID="OY1-He-Idn">
             <objects>
-                <viewController id="4tn-aL-MnG" customClass="TodayViewController" customModule="TimeTracking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4tn-aL-MnG" customClass="TodayViewController" customModule="TimeTracking" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O2F-KA-4Pz"/>
                         <viewControllerLayoutGuide type="bottom" id="ekS-cX-GWp"/>

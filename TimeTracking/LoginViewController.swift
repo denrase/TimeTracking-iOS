@@ -7,9 +7,8 @@
 //
 
 import UIKit
-class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
-    
-    @IBOutlet weak var scrollView: UIScrollView!
+
+class LoginViewController: UITableViewController, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var apiBaseUrlTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -47,43 +46,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
         super.viewWillAppear(animated)
         self.apiBaseUrlTextField.text = Store.apiBaseUrl()
         self.emailTextField.text = Store.userIdentifier()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "keyboardWillShow:",
-            name: UIKeyboardWillShowNotification,
-            object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "keyboardWillHide:",
-            name: UIKeyboardWillHideNotification,
-            object: nil)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-        super.viewWillDisappear(animated)
-    }
-    
-    // MARK: Keyboard
-    
-    func keyboardWillShow(notification: NSNotification) {
-        let info = notification.userInfo!
-        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as? NSValue)!.CGRectValue()
-        
-        var inset = self.scrollView.contentInset
-        inset.bottom = keyboardFrame.size.height
-        self.scrollView.contentInset = inset
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        var inset = self.scrollView.contentInset
-        inset.bottom = 0
-        self.scrollView.contentInset = inset
-    }
     
     // MARK: Actions
     
-    @IBAction func pressedLogin(sender: AnyObject?) {
+    @IBAction func pressedLogin(sender: UIButton) {
+        login()
+    }
+    
+    func login() {
         self.persistUserData()
         self.startLoadingIndicator()
         
@@ -107,7 +79,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
             }
         }
     }
-    
 
     
     // MARK: Helper
@@ -145,10 +116,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
         }
         else if (textField.isEqual(self.passwordTextField)) {
             textField.resignFirstResponder()
-            self.pressedLogin(nil)
+            self.login()
         }
         
         return true
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor.clearColor()
     }
     
     // MARK: UIPopoverPresentationControllerDelegate
@@ -156,5 +131,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return .None
     }
+    
     
 }
