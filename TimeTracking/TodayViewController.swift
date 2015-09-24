@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TimeTrackingKit
 
 class TodayViewController: UIViewController {
     
@@ -15,25 +14,26 @@ class TodayViewController: UIViewController {
     @IBOutlet weak var pauseTodayLabel: UILabel!
     @IBOutlet weak var startStopButton: UIButton!
     
+    var loggedOut : (() -> Void)?
+    
     var todaysWorkDay: WorkDay?
     var updateTimer: NSTimer?
     var tick = false;
     
+    class func todayNavigationController() -> UINavigationController {
+        let storyboard = UIStoryboard(name: "Today", bundle: nil)
+        return storyboard.instantiateInitialViewController() as! UINavigationController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLoginLogoutItems()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        setupLoginLogoutItems()
-        fetchStatus()
+        
         updateInterface()
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        self.updateTimer?.invalidate()
-        super.viewDidDisappear(animated)
+        fetchStatus()
     }
     
     // Setup
@@ -42,7 +42,6 @@ class TodayViewController: UIViewController {
         setupStartStopButton()
         setupLabels()
         startStopUpdateTimer()
-        setupLoginLogoutItems()
     }
     
     func setupLabels() {
@@ -95,17 +94,6 @@ class TodayViewController: UIViewController {
         else {
             self.startStopButton.backgroundColor = TimeTrackingColors.darkGrey()
             self.startStopButton.enabled = false
-        }
-    }
-    
-    func setupLoginLogoutItems() {
-        if (!Store.isLoggedIn()) {
-            let login = UIBarButtonItem(title: "Login", style: .Plain, target: self, action:"pressedLogin")
-            navigationItem.leftBarButtonItem = login
-        }
-        else {
-            let login = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action:"pressedLogin")
-            navigationItem.leftBarButtonItem = login
         }
     }
     
@@ -175,27 +163,17 @@ class TodayViewController: UIViewController {
         fetchStatus()
     }
     
-    @IBAction func pressedLogin() {
-        if (!Store.isLoggedIn()) {
-            let nav = LoginViewController.loginNavigationController()
-            nav.modalPresentationStyle = UIModalPresentationStyle.FormSheet
-            self.presentViewController(nav, animated: true, completion: nil)
-        }
-        else {
-            let controller = UIAlertController(title: "Logout", message: "Do you really want to logout?", preferredStyle: UIAlertControllerStyle.Alert)
-            let logoutAction = UIAlertAction(title: "Yes", style: .Default) { (action) in
-                Store.setAuthenticationToken("")
-                self.todaysWorkDay = nil
-                self.updateInterface()
-                Store.resetKeychain()
+    @IBAction func pressedLogout(sender: UIBarButtonItem) {
+        let controller = UIAlertController(title: "Logout", message: "Do you really want to logout?", preferredStyle: UIAlertControllerStyle.Alert)
+        let logoutAction = UIAlertAction(title: "Yes", style: .Default) { (action) in
+            if let loggedOut = self.loggedOut {
+                loggedOut()
             }
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-            
-            controller.addAction(logoutAction)
-            controller.addAction(cancelAction)
-            self.presentViewController(controller, animated: true, completion: nil)
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
-        setupLoginLogoutItems()
+        controller.addAction(logoutAction)
+        controller.addAction(cancelAction)
+        self.presentViewController(controller, animated: true, completion: nil)
     }
 }

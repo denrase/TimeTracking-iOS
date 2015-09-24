@@ -39,10 +39,9 @@ public struct WorkDay {
     }
     
     public func workedHoursAndMinutesToday() -> (Int, Int) {
-        var calendar = NSCalendar.currentCalendar()
-        let flags: NSCalendarUnit = NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute
+        let calendar = NSCalendar.currentCalendar()
         let now = NSDate()
-        let components = calendar.components(flags, fromDate: self.startDate, toDate: now, options: nil)
+        let components = calendar.components([.Hour, .Minute], fromDate: self.startDate, toDate: now, options: [])
         return (components.hour, components.minute)
     }
     
