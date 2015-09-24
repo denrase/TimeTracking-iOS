@@ -10,11 +10,12 @@ import Foundation
 
 public class Store {
     
-    static let AppGroup = "group.com.bytepoets.timetracking"
-    static let ApiBaseUrlKey = "apiBaseUrlKey"
-    static let UserIdentifierKey = "userIdentifierKey"
-    static let TokenKeychainItem = "TokenKeychainItem"
-    static var cachedAuthenticationToken: String?
+    private static let KeychainServiceKey = "com.bytepoets.TimeTracking"
+    private static let KeychainAuthenticationTokenKey = "authenticationToken"
+    private static var cachedAuthenticationToken: String?
+    
+    private static let DefaultsApiBaseUrlKey = "apiBaseUrlKey"
+    private static let DefaultsUserIdentifierKey = "userIdentifierKey"
     
     public class func isLoggedIn() -> Bool {
         return Store.authenticationToken().characters.count > 0
@@ -30,32 +31,31 @@ public class Store {
         return token
     }
     
-    private class func retrieveTokenFromKeychain() -> String {
-        let keychain = Keychain(service: Store.TokenKeychainItem, accessGroup: Store.AppGroup)
-        
-        if let token = keychain[string: String(kSecValueData)] {
-            return token;
-        }
-        else {
-            return ""
-        }
-    }
-    
-    public class func resetKeychain() {
-        let keychain = Keychain(service: Store.TokenKeychainItem, accessGroup: Store.AppGroup)
-        
-        if let error = try? keychain.removeAll() {
-            print(error)
-        }
-    }
-    
     public class func setAuthenticationToken(token: String) {
-        let keychain = Keychain(service: Store.TokenKeychainItem, accessGroup: Store.AppGroup)
-        keychain[String(kSecValueData)] = token
+        let keychain = Keychain(service: KeychainServiceKey)
+        keychain[KeychainAuthenticationTokenKey] = token
+    }
+    
+    public class func clearAuthenticationToken() {
+        let keychain = Keychain(service: KeychainServiceKey)
+        keychain[KeychainAuthenticationTokenKey] = nil
+        cachedAuthenticationToken = nil
+    }
+    
+    private class func retrieveTokenFromKeychain() -> String {
+        let keychain = Keychain(service: KeychainServiceKey)
+        
+        if let token = try? keychain.get(KeychainAuthenticationTokenKey) {
+            if let unwrappedToken = token {
+                return unwrappedToken
+            }
+        }
+            
+        return ""
     }
     
     public class func apiBaseUrl() -> String {
-        if let apiBaseUrl = Store.sharedDefaults().objectForKey(Store.ApiBaseUrlKey) as? String {
+        if let apiBaseUrl = NSUserDefaults.standardUserDefaults().objectForKey(DefaultsApiBaseUrlKey) as? String {
             return apiBaseUrl
         }
         else {
@@ -64,12 +64,12 @@ public class Store {
     }
     
     public class func setApiBaseUrl(apiBaseUrl: String) {
-        Store.sharedDefaults().setObject(apiBaseUrl, forKey: Store.ApiBaseUrlKey)
-        Store.sharedDefaults().synchronize()
+        NSUserDefaults.standardUserDefaults().setObject(apiBaseUrl, forKey: DefaultsApiBaseUrlKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     public class func userIdentifier() -> String {
-        if let userIdentifier = Store.sharedDefaults().objectForKey(Store.UserIdentifierKey) as? String {
+        if let userIdentifier = NSUserDefaults.standardUserDefaults().objectForKey(DefaultsUserIdentifierKey) as? String {
             return userIdentifier
         }
         else {
@@ -78,14 +78,7 @@ public class Store {
     }
     
     public class func setUserIdentifier(userIdentifier: String) {
-        Store.sharedDefaults().setObject(userIdentifier, forKey: Store.UserIdentifierKey)
-        Store.sharedDefaults().synchronize()
-    }
-    
-    //MARK: Helper
-    
-    private class func sharedDefaults() -> NSUserDefaults {
-        let defaults = NSUserDefaults(suiteName: Store.AppGroup)!
-        return defaults;
+        NSUserDefaults.standardUserDefaults().setObject(userIdentifier, forKey: DefaultsUserIdentifierKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
 }

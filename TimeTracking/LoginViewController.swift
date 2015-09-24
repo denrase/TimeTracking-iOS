@@ -86,10 +86,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIPopoverPrese
         self.persistUserData()
         self.startLoadingIndicator()
         
+        APIClient.sharedInstance.setApiBaseUrl(Store.apiBaseUrl())
+        
         APIClient.sharedInstance.login(self.emailTextField.text!, password: self.passwordTextField.text!) { (token, error) -> Void in
             self.stopLoadingIndicator()
             
-            if (Store.isLoggedIn()) {
+            if let token = token {
+                Store.setAuthenticationToken(token)
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
             else {

@@ -20,11 +20,16 @@ class TodayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        APIClient.sharedInstance.setApiBaseUrl(Store.apiBaseUrl())
+        APIClient.sharedInstance.setAuthenticationToken(Store.authenticationToken())
+        
         setupLoginLogoutItems()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         setupLoginLogoutItems()
         fetchStatus()
         updateInterface()
@@ -186,7 +191,7 @@ class TodayViewController: UIViewController {
                 Store.setAuthenticationToken("")
                 self.todaysWorkDay = nil
                 self.updateInterface()
-                Store.resetKeychain()
+                Store.clearAuthenticationToken()
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
             
