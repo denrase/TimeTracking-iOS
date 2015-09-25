@@ -17,10 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         setupAppearence()
+        setupApiClient()
         setupRootViewController()
         sendDataToWatch()
         
         return true
+    }
+    
+    func setupApiClient() {
+        if Store.isLoggedIn() {
+            APIClient.sharedInstance.setApiBaseUrl(Store.apiBaseUrl())
+            APIClient.sharedInstance.setAuthenticationToken(Store.authenticationToken())
+        }
     }
     
     func setupRootViewController() {
