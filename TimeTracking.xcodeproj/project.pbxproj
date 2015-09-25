@@ -481,9 +481,9 @@
 			projectRoot = "";
 			targets = (
 				92854D191AAE312D0062CF70 /* TimeTracking */,
-				92854D2E1AAE312D0062CF70 /* TimeTrackingTests */,
-				925ADC031AF39D8B00BB35BA /* TimeTracking WatchKit Extension */,
 				925ADC0D1AF39D8B00BB35BA /* TimeTracking WatchKit App */,
+				925ADC031AF39D8B00BB35BA /* TimeTracking WatchKit Extension */,
+				92854D2E1AAE312D0062CF70 /* TimeTrackingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -643,7 +643,7 @@
 				INFOPLIST_FILE = "TimeTracking WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bytepoets.TimeTracking.watchkitapp.watchkitext;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytepoets.TimeTracking.watchapp.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -673,7 +673,7 @@
 				INFOPLIST_FILE = "TimeTracking WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bytepoets.TimeTracking.watchkitapp.watchkitext;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytepoets.TimeTracking.watchapp.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -698,7 +698,7 @@
 				);
 				IBSC_MODULE = TimeTracking_WatchKit_Extension;
 				INFOPLIST_FILE = "TimeTracking WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bytepoets.TimeTracking.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytepoets.TimeTracking.watchapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -719,7 +719,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = TimeTracking_WatchKit_Extension;
 				INFOPLIST_FILE = "TimeTracking WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bytepoets.TimeTracking.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytepoets.TimeTracking.watchapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
