@@ -15,7 +15,8 @@
 		378429EC1BB43E0E003C3E89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB58881AAF8715008B4603 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		378429ED1BB43E19003C3E89 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92854D421AAE321A0062CF70 /* Today.storyboard */; settings = {ASSET_TAGS = (); }; };
 		378429EE1BB43E2D003C3E89 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AB588A1AAF87A2008B4603 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
-		37B300EF1BB44969007D5FC2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B300EE1BB44969007D5FC2 /* Alamofire.framework */; };
+		37CCEFF81BB54B12004D6059 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B300EE1BB44969007D5FC2 /* Alamofire.framework */; };
+		37CCEFF91BB54B12004D6059 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37B300EE1BB44969007D5FC2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		921857251B3EE666002402D0 /* EndpointSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921857241B3EE666002402D0 /* EndpointSelectionViewController.swift */; };
 		921857271B3F08E7002402D0 /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 921857261B3F08E7002402D0 /* configuration.plist */; };
 		9218572A1B3F0A6A002402D0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921857291B3F0A6A002402D0 /* Configuration.swift */; };
@@ -67,6 +68,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		37CCEFFA1BB54B12004D6059 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				37CCEFF91BB54B12004D6059 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		925860E01BAB398D0097ECBC /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,8 +147,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37B300EF1BB44969007D5FC2 /* Alamofire.framework in Frameworks */,
 				373D12541BB3F60F00D44CCB /* WatchConnectivity.framework in Frameworks */,
+				37CCEFF81BB54B12004D6059 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +368,7 @@
 				925ADC001AF39D8B00BB35BA /* Sources */,
 				925ADC011AF39D8B00BB35BA /* Frameworks */,
 				925ADC021AF39D8B00BB35BA /* Resources */,
-				37B300EC1BB4491F007D5FC2 /* Carthage Copy */,
+				37CCEFFA1BB54B12004D6059 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -528,21 +540,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		37B300EC1BB4491F007D5FC2 /* Carthage Copy */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/watchOS/Alamofire.framework",
-			);
-			name = "Carthage Copy";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		9272E96D1B43458500E5D484 /* Carthage Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -820,7 +817,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -844,7 +841,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

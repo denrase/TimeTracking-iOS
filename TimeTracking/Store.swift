@@ -12,10 +12,10 @@ public class Store {
     
     private static let KeychainServiceKey = "com.bytepoets.TimeTracking"
     private static let KeychainAuthenticationTokenKey = "authenticationToken"
-    private static var cachedAuthenticationToken: String?
-    
     private static let DefaultsApiBaseUrlKey = "apiBaseUrlKey"
     private static let DefaultsUserIdentifierKey = "userIdentifierKey"
+    
+    private static var cachedAuthenticationToken = ""
     
     public class func isLoggedIn() -> Bool {
         return Store.authenticationToken().characters.count > 0
@@ -23,8 +23,8 @@ public class Store {
     
     public class func authenticationToken() -> String {
         var token: String
-        if let cachedToken = cachedAuthenticationToken {
-            token = cachedToken
+        if cachedAuthenticationToken.characters.count > 0 {
+            token = cachedAuthenticationToken
         } else {
             token = retrieveTokenFromKeychain()
         }
@@ -39,7 +39,7 @@ public class Store {
     public class func clearAuthenticationToken() {
         let keychain = Keychain(service: KeychainServiceKey)
         keychain[KeychainAuthenticationTokenKey] = nil
-        cachedAuthenticationToken = nil
+        cachedAuthenticationToken = ""
     }
     
     private class func retrieveTokenFromKeychain() -> String {

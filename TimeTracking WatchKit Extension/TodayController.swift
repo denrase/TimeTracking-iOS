@@ -150,5 +150,6 @@ class TodayController: WKInterfaceController, WCSessionDelegate {
         }
         
         setupApiClient()
+        fetchStatus()
     }
 }
