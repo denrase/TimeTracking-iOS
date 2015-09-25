@@ -66,8 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         UINavigationBar.appearance().barTintColor = TimeTrackingColors.blue()
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         
-        let buttonAttributes: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.systemFontOfSize(14, weight: UIFontWeightRegular)];
-        let titleAttributes: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.systemFontOfSize(14, weight: UIFontWeightMedium)];
+        let buttonAttributes: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.systemFontOfSize(16, weight: UIFontWeightRegular)];
+        let titleAttributes: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.systemFontOfSize(16, weight: UIFontWeightMedium)];
         
         UIBarButtonItem.appearance().setTitleTextAttributes(buttonAttributes as? [String : AnyObject], forState: UIControlState.Normal)
         UINavigationBar.appearance().titleTextAttributes = titleAttributes as? [String : AnyObject]
