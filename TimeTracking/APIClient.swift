@@ -33,20 +33,6 @@ public class APIClient {
         setupStatusManager()
     }
     
-    private func setupLoginManager(user: String, pasword: String) {
-        let plainString = "\(user):\(pasword)" as NSString
-        let plainData = plainString.dataUsingEncoding(NSUTF8StringEncoding)
-        let base64String = plainData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
-        
-        var defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
-        defaultHeaders["Authorization"] = "Basic " + base64String!
-        
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        configuration.HTTPAdditionalHeaders = defaultHeaders
-        
-        self.loginManager = Alamofire.Manager(configuration: configuration)
-    }
-    
     private func setupStatusManager() {
         var defaultHeaders = Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders ?? [:]
         
@@ -83,52 +69,51 @@ public class APIClient {
     // ROUTES
     
     public func login(email: String, password: String, completion: LoginResponse) {
-        setupLoginManager(email, pasword: password)
-        self.loginManager?.request(.POST, "\(self.apiBaseUrl)/login")
-            .authenticate(user: email, password: password)
-            .responseJSON { _, _, result in
-                        
-                if let dict = result.value as? NSDictionary, token = dict["token"] as? String {
-                    self.setAuthenticationToken(token)
-                    completion(token: token, error: nil)
-                }
-                else {
-                    let error = NSError(domain: "", code: -1, userInfo: nil)
-                    completion(token: nil, error: error)
-                }
+        let plainString = "\(email):\(password)" as NSString
+        let plainData = plainString.dataUsingEncoding(NSUTF8StringEncoding)
+        let base64String = plainData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+        
+        let header = ["Authorization": "Basic " + base64String!]
+        let route = "\(self.apiBaseUrl)/login"
+        
+        Alamofire.request(.POST, route, headers: header).responseJSON { response in
+            if let json = response.result.value as? NSDictionary, token = json["token"] as? String {
+                self.setAuthenticationToken(token)
+                completion(token: token, error: nil)
+            } else {
+                let error = NSError(domain: "", code: -1, userInfo: nil)
+                completion(token: nil, error: error)
             }
+        }
     }
     
     public func status(completion: StatusResponse) {
-        setupStatusManager()
-        let status = "\(self.apiBaseUrl)/status"
-        self.statusManager?.request(.GET, status)
-            .responseJSON { _, response, result in
-                self.processRequest(completion, result: result)
-            }
+        let header = ["X-API-AUTH-TOKEN": self.authenticationToken]
+        let route = "\(self.apiBaseUrl)/status"
+        Alamofire.request(.GET, route, headers: header).responseJSON { response in
+            self.processRequest(completion, result: response.result.value)
+        }
     }
     
     public func start(completion: StatusResponse) {
-        setupStatusManager()
-        self.statusManager?.request(.POST, "\(self.apiBaseUrl)/status/start")
-            .responseJSON { _, response, result in
-                self.processRequest(completion, result: result)
+        let header = ["X-API-AUTH-TOKEN": self.authenticationToken]
+        let route = "\(self.apiBaseUrl)/status/start"
+        Alamofire.request(.POST, route, headers: header).responseJSON { response in
+            self.processRequest(completion, result: response.result.value)
         }
     }
     
     public func stop(completion: StatusResponse) {
-        setupStatusManager()
-        self.statusManager?.request(.POST, "\(self.apiBaseUrl)/status/stop")
-            .responseJSON { _, response, result in
-                self.processRequest(completion, result: result)
+        let header = ["X-API-AUTH-TOKEN": self.authenticationToken]
+        let route = "\(self.apiBaseUrl)/status/stop"
+        Alamofire.request(.POST, route, headers: header).responseJSON { response in
+            self.processRequest(completion, result: response.result.value)
         }
     }
     
-    private func processRequest(completion: StatusResponse, result: Result<AnyObject>) {
-        let dict = result.value as? NSDictionary
-        
-        if let status = dict?["status"] as? String, duration = dict?["duration"] as? String, pauseDuration = dict?["pause_duration"] as? String {
-             completion(workDay: WorkDay(status: status, worked: duration, paused: pauseDuration), error: nil)
+    private func processRequest(completion: StatusResponse, result: AnyObject?) {
+        if let dict = result as? NSDictionary, status = dict["status"] as? String, duration = dict["duration"] as? String, pauseDuration = dict["pause_duration"] as? String {
+            completion(workDay: WorkDay(status: status, worked: duration, paused: pauseDuration), error: nil)
         }
         else {
             let error = NSError(domain: "", code: -1, userInfo: nil)

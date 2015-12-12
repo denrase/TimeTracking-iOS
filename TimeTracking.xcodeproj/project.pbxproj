@@ -7,31 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3715B1671B160BAF00C00A76 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3715B1661B160BAE00C00A76 /* GlanceController.swift */; };
-		373D124E1BB3E1D800D44CCB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9258610D1BAB48CE0097ECBC /* Alamofire.framework */; };
 		373D12521BB3F4CF00D44CCB /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373D12511BB3F4CF00D44CCB /* WatchConnectivity.framework */; };
 		373D12541BB3F60F00D44CCB /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373D12531BB3F60F00D44CCB /* WatchConnectivity.framework */; };
-		373D12551BB3F63F00D44CCB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FB1BAB48100097ECBC /* Store.swift */; settings = {ASSET_TAGS = (); }; };
-		378429EC1BB43E0E003C3E89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB58881AAF8715008B4603 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		378429ED1BB43E19003C3E89 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92854D421AAE321A0062CF70 /* Today.storyboard */; settings = {ASSET_TAGS = (); }; };
-		378429EE1BB43E2D003C3E89 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AB588A1AAF87A2008B4603 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
-		37CCEFF81BB54B12004D6059 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B300EE1BB44969007D5FC2 /* Alamofire.framework */; };
-		37CCEFF91BB54B12004D6059 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37B300EE1BB44969007D5FC2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		373D12551BB3F63F00D44CCB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FB1BAB48100097ECBC /* Store.swift */; };
+		378429EC1BB43E0E003C3E89 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AB58881AAF8715008B4603 /* LoginViewController.swift */; };
+		378429ED1BB43E19003C3E89 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92854D421AAE321A0062CF70 /* Today.storyboard */; };
+		378429EE1BB43E2D003C3E89 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AB588A1AAF87A2008B4603 /* Login.storyboard */; };
 		921857251B3EE666002402D0 /* EndpointSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921857241B3EE666002402D0 /* EndpointSelectionViewController.swift */; };
 		921857271B3F08E7002402D0 /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 921857261B3F08E7002402D0 /* configuration.plist */; };
 		9218572A1B3F0A6A002402D0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921857291B3F0A6A002402D0 /* Configuration.swift */; };
 		9218572C1B3F0A75002402D0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9218572B1B3F0A75002402D0 /* Endpoint.swift */; };
 		925860DC1BAB398D0097ECBC /* TimeTracking WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 925ADC041AF39D8B00BB35BA /* TimeTracking WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		925860DF1BAB398D0097ECBC /* TimeTracking WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 925ADC0E1AF39D8B00BB35BA /* TimeTracking WatchKit App.app */; };
-		925860FE1BAB48100097ECBC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FA1BAB48100097ECBC /* APIClient.swift */; settings = {ASSET_TAGS = (); }; };
-		925860FF1BAB48100097ECBC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FA1BAB48100097ECBC /* APIClient.swift */; settings = {ASSET_TAGS = (); }; };
-		925861001BAB48100097ECBC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FB1BAB48100097ECBC /* Store.swift */; settings = {ASSET_TAGS = (); }; };
-		925861021BAB48100097ECBC /* TimeTrackingColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FC1BAB48100097ECBC /* TimeTrackingColors.swift */; settings = {ASSET_TAGS = (); }; };
-		925861031BAB48100097ECBC /* TimeTrackingColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FC1BAB48100097ECBC /* TimeTrackingColors.swift */; settings = {ASSET_TAGS = (); }; };
-		925861041BAB48100097ECBC /* WorkDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FD1BAB48100097ECBC /* WorkDay.swift */; settings = {ASSET_TAGS = (); }; };
-		925861051BAB48100097ECBC /* WorkDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FD1BAB48100097ECBC /* WorkDay.swift */; settings = {ASSET_TAGS = (); }; };
-		9258612F1BAB53910097ECBC /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258612E1BAB53910097ECBC /* Keychain.swift */; settings = {ASSET_TAGS = (); }; };
-		925861301BAB53910097ECBC /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258612E1BAB53910097ECBC /* Keychain.swift */; settings = {ASSET_TAGS = (); }; };
+		925860FE1BAB48100097ECBC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FA1BAB48100097ECBC /* APIClient.swift */; };
+		925860FF1BAB48100097ECBC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FA1BAB48100097ECBC /* APIClient.swift */; };
+		925861001BAB48100097ECBC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FB1BAB48100097ECBC /* Store.swift */; };
+		925861021BAB48100097ECBC /* TimeTrackingColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FC1BAB48100097ECBC /* TimeTrackingColors.swift */; };
+		925861031BAB48100097ECBC /* TimeTrackingColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FC1BAB48100097ECBC /* TimeTrackingColors.swift */; };
+		925861041BAB48100097ECBC /* WorkDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FD1BAB48100097ECBC /* WorkDay.swift */; };
+		925861051BAB48100097ECBC /* WorkDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925860FD1BAB48100097ECBC /* WorkDay.swift */; };
+		9258612F1BAB53910097ECBC /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258612E1BAB53910097ECBC /* Keychain.swift */; };
+		925861301BAB53910097ECBC /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9258612E1BAB53910097ECBC /* Keychain.swift */; };
 		925ADC0B1AF39D8B00BB35BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 925ADC0A1AF39D8B00BB35BA /* Images.xcassets */; };
 		925ADC191AF39D8B00BB35BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 925ADC181AF39D8B00BB35BA /* Images.xcassets */; };
 		925ADC241AF39DA200BB35BA /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 925ADC231AF39DA200BB35BA /* Today.storyboard */; };
@@ -41,6 +37,8 @@
 		92854D271AAE312D0062CF70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92854D261AAE312D0062CF70 /* Images.xcassets */; };
 		92854D361AAE312D0062CF70 /* TimeTrackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92854D351AAE312D0062CF70 /* TimeTrackingTests.swift */; };
 		92854D451AAE32710062CF70 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92854D441AAE32710062CF70 /* TodayViewController.swift */; };
+		92ED0F981C1C2DC40048AF66 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B300EE1BB44969007D5FC2 /* Alamofire.framework */; };
+		92ED0F991C1C2DD20048AF66 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9258610D1BAB48CE0097ECBC /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,17 +66,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		37CCEFFA1BB54B12004D6059 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				37CCEFF91BB54B12004D6059 /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		925860E01BAB398D0097ECBC /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,7 +91,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3715B1661B160BAE00C00A76 /* GlanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		373D12511BB3F4CF00D44CCB /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		373D12531BB3F60F00D44CCB /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.0.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		373D12561BB4292C00D44CCB /* TimeTracking WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TimeTracking WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -147,8 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92ED0F981C1C2DC40048AF66 /* Alamofire.framework in Frameworks */,
 				373D12541BB3F60F00D44CCB /* WatchConnectivity.framework in Frameworks */,
-				37CCEFF81BB54B12004D6059 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				373D124E1BB3E1D800D44CCB /* Alamofire.framework in Frameworks */,
 				373D12521BB3F4CF00D44CCB /* WatchConnectivity.framework in Frameworks */,
+				92ED0F991C1C2DD20048AF66 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +189,6 @@
 		925861121BAB490C0097ECBC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3715B1661B160BAE00C00A76 /* GlanceController.swift */,
 				925ADC251AF39DD000BB35BA /* TodayController.swift */,
 			);
 			name = Controller;
@@ -368,7 +353,7 @@
 				925ADC001AF39D8B00BB35BA /* Sources */,
 				925ADC011AF39D8B00BB35BA /* Frameworks */,
 				925ADC021AF39D8B00BB35BA /* Resources */,
-				37CCEFFA1BB54B12004D6059 /* Embed Frameworks */,
+				92ED0F9A1C1C2E3E0048AF66 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -555,6 +540,21 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		92ED0F9A1C1C2E3E0048AF66 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/watchOS/Alamofire.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -565,7 +565,6 @@
 				373D12551BB3F63F00D44CCB /* Store.swift in Sources */,
 				925861031BAB48100097ECBC /* TimeTrackingColors.swift in Sources */,
 				925ADC261AF39DD000BB35BA /* TodayController.swift in Sources */,
-				3715B1671B160BAF00C00A76 /* GlanceController.swift in Sources */,
 				925860FF1BAB48100097ECBC /* APIClient.swift in Sources */,
 				925861051BAB48100097ECBC /* WorkDay.swift in Sources */,
 				925861301BAB53910097ECBC /* Keychain.swift in Sources */,
